@@ -10,6 +10,11 @@
 
 using namespace std;
 
+const char *SUIT_NAMES[] = {"Spades", "Hearts", "Clubs", "Diamonds"};
+const char *RANK_NAMES[] = {"Two", "Three", "Four", "Five", "Six",
+    "Seven", "Eight", "Nine", "Ten", "Jack",
+    "Queen", "King", "Ace"};
+
 //EFFECTS: initializes Card to Two of Spades
 Card::Card()
 :rank(TWO), suit(SPADES) {}
@@ -28,4 +33,13 @@ Card::Rank Card::get_rank() const
 Card::Suit Card::get_suit() const
 {
 	return suit;
+}
+
+//EFFECTS: Writes the Card to the stream
+//  for example "Two of Spades"
+std::ostream& operator<< (std::ostream& os, const Card& c)
+{
+	os << RANK_NAMES[c.get_rank()] << " of " << SUIT_NAMES[c.get_suit()];
+
+	return os;
 }
