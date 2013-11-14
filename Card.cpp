@@ -7,6 +7,8 @@
 //
 
 #include "Card.h"
+#include <cstdlib>
+#include <cassert>
 
 using namespace std;
 
@@ -17,11 +19,19 @@ const char *RANK_NAMES[] = {"Two", "Three", "Four", "Five", "Six",
 
 //EFFECTS: initializes Card to Two of Spades
 Card::Card()
-:rank(TWO), suit(SPADES) {}
+:rank(TWO), suit(SPADES)
+{
+	assert(rank == TWO);
+	assert(suit == SPADES);
+}
 
 //EFFECTS: initializes Card with rank_in and suit_in
 Card::Card(Rank rank_in, Suit suit_in)
-:rank(rank_in), suit(suit_in) {}
+:rank(rank_in), suit(suit_in)
+{
+	assert(rank == rank_in);
+	assert(suit == suit_in);
+}
 
 //EFFECTS: returns rank
 Card::Rank Card::get_rank() const
