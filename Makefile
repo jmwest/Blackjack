@@ -24,6 +24,10 @@ testC : Card_test00
 	./Card_test00 > Card_test00.out
 	diff Card_test00.out Card_test00.out.correct
 
+testD : Deck_test00
+	./Deck_test00 > Deck_test00.out
+	diff Deck_test00.out Deck_test00.out.correct
+
 clean :
 	rm -vf blackjack *.out \
          Card_test[0-9][0-9] \

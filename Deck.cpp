@@ -53,21 +53,49 @@ void Deck::shuffle(int n)
 	Card left[DECK_SIZE];
 	Card right[DECK_SIZE];
 
+	int lesser = 0;
+
+	cout << endl << "left: " << endl;
 	for (int i = 0; i < n; i++)
 	{
 		left[i] = deck[i];
+		cout << left[i] << endl;
 	}
 
+	cout << endl << "right: " << endl;
 	for (int j = n; j < DECK_SIZE; j++)
 	{
 		right[j] = deck[j];
+		cout << right[j] << endl;
 	}
 
-	for (int k = 0; (k < n) and (k < DECK_SIZE - n); k++)
+	if (n < DECK_SIZE - n)
 	{
-		deck[2 * k] = right[k];
-		deck[(2 * k) + 1] = left[k];
+		lesser = n;
 	}
+	else
+	{
+		lesser = DECK_SIZE - n;
+	}
+
+	for (int k = 0; k < 2 * lesser; k++)
+	{
+		if (k % 2 == 0)
+		{
+			deck[k] = right[k / 2];
+		}
+		else
+		{
+			deck[k] = left[k / 2];
+		}
+	}
+
+// OLD LOOP
+//	for (int k = 0; (k < n) and (k < DECK_SIZE - n); k++)
+//	{
+//		deck[2 * k] = right[k];
+//		deck[(2 * k) + 1] = left[k];
+//	}
 
 	if (n < DECK_SIZE - n)
 	{
@@ -124,7 +152,7 @@ int Deck::cards_remaining() const
 {
 	int remaining = 0;
 
-	remaining = 52 - (int)( (next - deck) / sizeof(next) );
+	remaining = 52 - (int)(next - deck);
 
 	return remaining;
 }
