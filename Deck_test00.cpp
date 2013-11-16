@@ -39,8 +39,11 @@ int main()
     Card before = d.deal();
     d.shuffle(26); // Should replace the dealt card before shuffling
 
+	cout << endl << "AS: " << endl;
+	d.print();
+
 	assert(d.cards_remaining() == 52);
-    d.deal();
+    shuffledD[0] = d.deal();
 	assert(d.cards_remaining() == 51);
     Card after = d.deal(); // Should be the same as before.
 	assert(d.cards_remaining() == 50);

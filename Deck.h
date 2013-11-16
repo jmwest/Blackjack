@@ -18,6 +18,7 @@ class Deck {
     // spades from 2-A, then the hearts, then the clubs, then the
     // diamonds.  The first card dealt should be the 2 of Spades.
 
+	void print();
     void reset();
     // MODIFIES: this
 

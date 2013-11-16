@@ -27,6 +27,13 @@ Deck::Deck()
 // spades from 2-A, then the hearts, then the clubs, then the
 // diamonds.  The first card dealt should be the 2 of Spades.
 
+void Deck::print()
+{
+	for (int i = 0; i < DECK_SIZE; i++)
+	{
+		cout << deck[i] << endl;
+	}
+}
 void Deck::reset()
 {
 	for (int i = 0; i < 4; i++)
@@ -62,12 +69,39 @@ void Deck::shuffle(int n)
 		cout << left[i] << endl;
 	}
 
-	cout << endl << "right: " << endl;
-	for (int j = n; j < DECK_SIZE; j++)
-	{
-		right[j] = deck[j];
-		cout << right[j] << endl;
-	}
+//	cout << endl << "right: " << endl;
+//	for (int j = n; j < DECK_SIZE; j++)
+//	{
+//		right[j] = deck[j];
+//		cout << right[j] << endl;
+//	}
+
+	right[0] = deck[n];
+	right[1] = deck[n + 1];
+	right[2] = deck[n + 2];
+	right[3] = deck[n + 3];
+	right[4] = deck[n + 4];
+	right[5] = deck[n + 5];
+	right[6] = deck[n + 6];
+	right[7] = deck[n + 7];
+	right[8] = deck[n + 8];
+	right[9] = deck[n + 9];
+	right[10] = deck[n + 10];
+	right[11] = deck[n + 11];
+	right[12] = deck[n + 12];
+	right[13] = deck[n + 13];
+	right[14] = deck[n + 14];
+	right[15] = deck[n + 15];
+	right[16] = deck[n + 16];
+	right[17] = deck[n + 17];
+	right[18] = deck[n + 18];
+	right[19] = deck[n + 19];
+	right[20] = deck[n + 20];
+	right[21] = deck[n + 21];
+	right[22] = deck[n + 22];
+	right[23] = deck[n + 23];
+	right[24] = deck[n + 24];
+	right[25] = deck[n + 25];
 
 	if (n < DECK_SIZE - n)
 	{
@@ -78,24 +112,27 @@ void Deck::shuffle(int n)
 		lesser = DECK_SIZE - n;
 	}
 
+	cout << endl << "RIGHT: " << endl;
+	for (int x = 0; x < DECK_SIZE - n; x++) {
+		cout << right[x] << " " << x << endl;
+	}
+
+	cout << endl << "deck: " << endl;
 	for (int k = 0; k < 2 * lesser; k++)
 	{
 		if (k % 2 == 0)
 		{
 			deck[k] = right[k / 2];
+			cout << "fr: " << right[k / 2] << endl;
 		}
 		else
 		{
 			deck[k] = left[k / 2];
+			cout << "fl: " << left[k / 2] << endl;
 		}
-	}
 
-// OLD LOOP
-//	for (int k = 0; (k < n) and (k < DECK_SIZE - n); k++)
-//	{
-//		deck[2 * k] = right[k];
-//		deck[(2 * k) + 1] = left[k];
-//	}
+//		cout << deck[k] << endl;
+	}
 
 	if (n < DECK_SIZE - n)
 	{
@@ -137,7 +174,7 @@ void Deck::shuffle(int n)
 
 Card Deck::deal()
 {
-	Card card = *next;
+	Card card(next->get_rank(), next->get_suit());
 
 	next++;
 
