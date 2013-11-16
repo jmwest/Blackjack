@@ -40,6 +40,11 @@ testH : Hand_test00
 	./Hand_test00 > Hand_test00.out
 	diff Hand_test00.out Hand_test00.out.correct
 
+testP : Player_test00
+	./Player_test00 simple
+	./Player_test00 counting
+	./Player_test00 competitor
+
 clean :
 	rm -vf blackjack *.out \
          Card_test[0-9][0-9] \

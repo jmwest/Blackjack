@@ -7,7 +7,16 @@
 //
 
 #include "Player.h"
+#include <iostream>
 #include <cassert>
+#include <cstring>
+#include <cstdlib>
+
+using namespace std;
+
+/////////////////////////////////////////////////
+//                Simple Player                //
+/////////////////////////////////////////////////
 
 class Simple : public Player {
 public:
@@ -140,9 +149,9 @@ public:
     // EFFECTS: returns the player's bet, between minimum and bankroll
     // inclusive
 	
-    virtual bool draw(Card dealer, // Dealer's "up card"
-                      const Hand &player // Player's current hand
-                      );
+//    virtual bool draw(Card dealer, // Dealer's "up card"
+//                      const Hand &player // Player's current hand
+//                      );
     // EFFECTS: returns true if the player wishes to be dealt another
     // card, false otherwise.
 	
@@ -217,4 +226,169 @@ void Counting::shuffled()
 //                 Competitor                 //
 ////////////////////////////////////////////////
 
+class Competitor : public Simple {
+public:
+	Competitor();
+	
+	virtual int bet(unsigned int bankroll, unsigned int minimum);
+    // REQUIRES: bankroll >= minimum
+    // EFFECTS: returns the player's bet, between minimum and bankroll
+    // inclusive
+	
+//    virtual bool draw(Card dealer, // Dealer's "up card"
+//                      const Hand &player // Player's current hand
+//                      );
+    // EFFECTS: returns true if the player wishes to be dealt another
+    // card, false otherwise.
+	
+    virtual void expose(Card c);
+    // EFFECTS: allows the player to "see" the newly-exposed card c.
+    // For example, each card that is dealt "face up" is expose()d.
+    // Likewise, if the dealer must show his "hole card", it is also
+    // expose()d.  Note: not all cards dealt are expose()d---if the
+    // player goes over 21 or is dealt a natural 21, the dealer need
+    // not expose his hole card.
+	
+    virtual void shuffled();
+    // EFFECTS: tells the player that the deck has been re-shuffled.
+	
+	//    virtual ~Counting() {}
+	//    // Note: this is here only to suppress a compiler warning.
+	//    //       Destructors are not needed for this project.
+	
+private:
+	int count;
+	int ace_count;
+};
 
+Competitor::Competitor()
+: count(0), ace_count(0)
+{
+	assert(count == 0);
+	assert(ace_count == 0);
+}
+
+int Competitor::bet(unsigned int bankroll, unsigned int minimum)
+{
+	if (count < 2)
+	{
+		return minimum;
+	}
+	else if (count < 5)
+	{
+		if (minimum * 1.5 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 1.5;
+		}
+	}
+	else if (count < 8)
+	{
+		if (minimum * 2 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 2;
+		}
+	}
+	else if (count < 11)
+	{
+		if (minimum * 3 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 3;
+		}
+	}
+	else
+	{
+		if (minimum * 4 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 4;
+		}
+	}
+}
+
+void Competitor::expose(Card c)
+{
+	if (c.get_rank() <= Card::THREE)
+	{
+		count++;
+	}
+	else if (c.get_rank() <= Card::SIX)
+	{
+		count += 2;
+	}
+	else if (c.get_rank() == Card::SEVEN)
+	{
+		count++;
+	}
+	else if (c.get_rank() == Card::NINE)
+	{
+		count--;
+	}
+	else if ((c.get_rank() >= Card::TEN)
+			 and  (c.get_rank() <= Card::KING))
+	{
+		count -= 2;
+	}
+	else if (c.get_rank() == Card::ACE)
+	{
+		ace_count++;
+	}
+
+	return;
+}
+
+void Competitor::shuffled()
+{
+	count = 0;
+	ace_count = 0;
+
+	return;
+}
+
+////////////////////////////////////////////////
+//               Static Players               //
+////////////////////////////////////////////////
+
+static Simple simple;
+static Counting counting;
+static Competitor competitor;
+
+////////////////////////////////////////////////
+//               Player Factory               //
+////////////////////////////////////////////////
+
+Player* player_factory(const char * s)
+{
+	if (strcmp(s, "simple") == 0)
+	{
+		return &simple;
+	}
+	else if (strcmp(s, "counting") == 0)
+	{
+		return &counting;
+	}
+	else if (strcmp(s, "competitor") == 0)
+	{
+		return &competitor;
+	}
+	else
+	{
+		// Should never get here because of the Requires clause
+		cout << "Player was not simple, counting, or competitor. Exit_Failure" << endl;
+		exit(EXIT_FAILURE);
+	}
+}
