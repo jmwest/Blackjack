@@ -49,6 +49,7 @@ void Hand::add_card(Card c)
 				else
 				{
 					value = value - 9;
+					soft = false;
 				}
 			}
 			else if ((c.get_rank() != Card::KING)
@@ -56,9 +57,12 @@ void Hand::add_card(Card c)
 					 and (c.get_rank() != Card::JACK))
 			{
 				value = value + static_cast<int>(c.get_rank()) - 8;
+				soft = false;
 			}
-
-			soft = false;
+			else
+			{
+				soft = false;
+			}
 		}
 		else
 		{
