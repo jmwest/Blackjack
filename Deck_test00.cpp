@@ -5,9 +5,12 @@
 #include "Card.h"
 #include <cassert>
 #include <iostream>
+
+#include "OperatorOverload.h"
+
 using namespace std;
 
-bool operator== (const Card &a, const Card &b);
+//bool operator== (const Card &a, const Card &b);
 
 int main()
 {
@@ -30,7 +33,7 @@ int main()
 		{
 			delt = d.deal();
 			assert(delt == Card(static_cast<Card::Rank>(n), static_cast<Card::Suit>(m)));
-			cout << delt << endl;
+//			cout << delt << endl;
 		}
 	}
 
@@ -39,8 +42,8 @@ int main()
     Card before = d.deal();
     d.shuffle(26); // Should replace the dealt card before shuffling
 
-	cout << endl << "AS: " << endl;
-	d.print();
+//	cout << endl << "AS: " << endl;
+//	d.print();
 
 	assert(d.cards_remaining() == 52);
     shuffledD[0] = d.deal();
@@ -70,9 +73,4 @@ int main()
 	}
 
     return 0;
-}
-
-bool operator== (const Card &a, const Card &b)
-{
-	return (a.get_rank() == b.get_rank()) && (a.get_suit() == b.get_suit());
 }
