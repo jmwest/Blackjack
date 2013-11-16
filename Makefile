@@ -32,7 +32,8 @@ testD : Deck_test00
 	diff Deck_test00.out Deck_test00.out.correct
 
 testH : Hand_test00
-	./Hand_test00
+	./Hand_test00 > Hand_test00.out
+	diff Hand_test00.out Hand_test00.out.correct
 
 clean :
 	rm -vf blackjack *.out \

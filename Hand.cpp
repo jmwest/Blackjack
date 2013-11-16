@@ -86,7 +86,7 @@ void Hand::add_card(Card c)
 //		}
 	}
 
-	if ((c.get_rank() == Card::ACE) and (value > 11))
+	else if ((c.get_rank() == Card::ACE) and (value > 11))
 	{
 		value = value + 1;
 	}
