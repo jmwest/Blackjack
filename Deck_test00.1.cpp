@@ -44,6 +44,10 @@ int main()
 	cout << endl << "Shuffled with 30: " << endl;
 	deck.shuffle(30);
 	deck.print();
+	
+	cout << endl << "Shuffled with 0: " << endl;
+	deck.shuffle(0);
+	deck.print();
 
 	return 0;
 }

@@ -143,10 +143,16 @@ void Deck::shuffle(int n)
 	}
 	else if (n > DECK_SIZE - n)
 	{
-		for (int l = DECK_SIZE - n; l < (2 * n) - DECK_SIZE; l++)
+//		cout << "BLAH" << endl;
+//		cout << "n: " << n << endl;
+//		cout << "deck - n: " << DECK_SIZE - n << endl;
+//		cout << "2n - deck: " << (2 * n) - DECK_SIZE << endl;
+		for (int l = 0; l < (2 * n) - DECK_SIZE; l++)
 		{
-			deck[l] = left[l];
+			deck[(2 * lesser) + l] = left[lesser + l];
+//			cout << left[lesser + l] << endl;
 		}
+//		cout << endl;
 	}
 
 	return;

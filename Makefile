@@ -16,7 +16,7 @@ Hand_test00 : Hand_test00.cpp Hand.cpp Card.cpp
 Deck_test00.1 : Deck_test00.1.cpp Deck.cpp Card.cpp
 	$(CC) $(CFLAGS) Deck_test00.1.cpp Deck.cpp Card.cpp -o Deck_test00.1
 
-blackjack :  Card.cpp rand.cpp Hand.cpp Deck.cpp Player.cpp blackjack.cpp
+blackjack : Card.cpp rand.cpp Hand.cpp Deck.cpp Player.cpp blackjack.cpp
 	$(CC) $(CFLAGS) Card.cpp rand.cpp Hand.cpp Deck.cpp Player.cpp blackjack.cpp -o blackjack
 
 test : blackjack Card_test00 Deck_test00 Player_test00
@@ -30,7 +30,7 @@ testC : Card_test00
 	./Card_test00 > Card_test00.out
 	diff Card_test00.out Card_test00.out.correct
 
-testD : Deck_test00
+testD : Deck_test00 Deck_test00.1
 	./Deck_test00 > Deck_test00.out
 	diff Deck_test00.out Deck_test00.out.correct
 	./Deck_test00.1 > Deck_test00.1.out
