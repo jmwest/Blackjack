@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 	/////////////
 	// draw tests
 
-	// soft
+	// hard
 	///////
 
 	dealer_card_up = Card(Card::EIGHT, Card::HEARTS);
@@ -178,10 +178,65 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	// hard
+	// soft
 	///////
 
-	
+	Card first_card_array[20];
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			first_card_array[(i * 5) + j] = Card(static_cast<Card::Rank>(j), static_cast<Card::Suit>(i));
+		}
+	}
+
+	// < 17
+	for (int k = 0; k < 20; k++)
+	{
+		player_hand.discard_all();
+		dealer_card_up = Card(static_cast<Card::Rank>(k % 13), static_cast<Card::Suit>(k % 4));
+		
+		player_hand.add_card(first_card_array[k]);
+		player_hand.add_card(Card(Card::ACE, Card::DIAMONDS));
+		
+		assert(player->draw(dealer_card_up, player_hand) == true);
+	}
+
+	// == 18
+	for (int x = 0; x < 13; x++)
+	{
+		player_hand.discard_all();
+		dealer_card_up = Card(static_cast<Card::Rank>(x), static_cast<Card::Suit>(x / 4));
+		
+		player_hand.add_card(Card(Card::ACE, Card::SPADES));
+		player_hand.add_card(Card(Card::SEVEN, Card::DIAMONDS));
+
+		if ((x == 0) or (x == 5) or (x == 6))
+		{
+			assert(player->draw(dealer_card_up, player_hand) == false);
+		}
+		else
+		{
+			assert(player->draw(dealer_card_up, player_hand) == true);
+		}
+	}
+
+	// > 19
+	for (int y = 0; y < 52; y++)
+	{
+		for (int z = 0; z < 3; z++)
+		{
+			player_hand.discard_all();
+			dealer_card_up = Card(static_cast<Card::Rank>(y % 13), static_cast<Card::Suit>(y / 13));
+			
+			player_hand.add_card(Card(Card::ACE, Card::SPADES));
+			player_hand.add_card(Card(Card::SIX, Card::DIAMONDS));
+			player_hand.add_card(Card(static_cast<Card::Rank>(z), static_cast<Card::Suit>(z)));
+
+			assert(player->draw(dealer_card_up, player_hand) == false);
+		}
+	}
 
 	///////////////
 	// expose tests
@@ -190,6 +245,9 @@ int main(int argc, char *argv[])
 	{
 		return 0;
 	}
+
+	////////////////////////////////////
+	// bet tests - Counting & Competitor
 
 	
 

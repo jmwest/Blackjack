@@ -315,7 +315,21 @@ int Competitor::bet(unsigned int bankroll, unsigned int minimum)
 		}
 		else
 		{
-			return minimum * 4;
+			if (ace_count == 4)
+			{
+				if (bankroll > 10 * minimum)
+				{
+					return minimum * 10;
+				}
+				else
+				{
+					return bankroll;
+				}
+			}
+			else
+			{
+				return minimum * 4;
+			}
 		}
 	}
 }
