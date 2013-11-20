@@ -12,8 +12,8 @@
 
 using namespace std;
 
-const char *SUIT_NAMES[] = {"Spades", "Hearts", "Clubs", "Diamonds"};
-const char *RANK_NAMES[] = {"Two", "Three", "Four", "Five", "Six",
+static const char *SUIT_NAMES[] = {"Spades", "Hearts", "Clubs", "Diamonds"};
+static const char *RANK_NAMES[] = {"Two", "Three", "Four", "Five", "Six",
     "Seven", "Eight", "Nine", "Ten", "Jack",
     "Queen", "King", "Ace"};
 
