@@ -38,13 +38,19 @@ static void shuffle_deck(Deck *deck_ptr, Player *player_ptr);
 //			 player_hand
 //			 dealer_hand
 // EFFECTS:
-static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_hand, Hand *dealer_hand);
+static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_hand, Hand *dealer_hand, Card *dealer_upcard_ptr);
 
 //
 static bool check_twenty_one(Hand *hand);
 
 //
 static void natural_twenty_one_payout(int &bankroll);
+
+//
+static void announce_player_card(const Card *card);
+
+//
+static void announce_dealer_card(const Card *card);
 
 int main(int argc, char *argv[])
 {
@@ -60,6 +66,7 @@ int main(int argc, char *argv[])
 	Deck deck;
 	Hand player_hand;
 	Hand dealer_hand;
+	Card dealer_upcard;
 	int bankroll = atoi(argv[1]);
 	int thishand = 1;
 	int max_hands = atoi(argv[2]);
@@ -82,7 +89,7 @@ int main(int argc, char *argv[])
 
 		cout << "Player bets " << wager << endl;
 
-		deal_initial_cards(&deck, player_ptr, &player_hand, &dealer_hand);
+		deal_initial_cards(&deck, player_ptr, &player_hand, &dealer_hand, &dealer_upcard);
 
 		if (check_twenty_one(&player_hand))
 		{
@@ -91,8 +98,31 @@ int main(int argc, char *argv[])
 		else
 		{
 			bool player_stands = false;
+			bool player_busts = false;
 
-			
+			while (player_stands == false)
+			{
+				if (player_ptr->draw(dealer_upcard, player_hand))
+				{
+					Card player_card;
+
+					player_card = deck.deal();
+
+					player_hand.add_card(player_card);
+					player_ptr->expose(player_card);
+
+					announce_player_card(&player_card);
+				}
+				else
+				{
+					player_stands = true;
+				}
+
+				if (player_hand.hand_value() > 21)
+				{
+					player_busts = true;
+				}
+			}
 		}
 	}
 
@@ -119,7 +149,7 @@ static void shuffle_deck(Deck *deck, Player *player_ptr)
 	return;
 }
 
-static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_hand, Hand *dealer_hand)
+static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_hand, Hand *dealer_hand, Card *dealer_upcard_ptr)
 {
 	Card player_cards[2];
 	Card dealer_cards[2];
@@ -129,24 +159,26 @@ static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_
 
 	player_ptr->expose(player_cards[0]);
 
-	cout << "Player dealt " << player_cards[0] << endl;
+	announce_player_card(&player_cards[0]);
 
 	dealer_cards[0] = deck_ptr->deal();
 	dealer_hand->add_card(dealer_cards[0]);
 
 	player_ptr->expose(dealer_cards[0]);
 
-	cout << "Dealer dealt " << dealer_cards[0] << endl;
+	announce_dealer_card(&dealer_cards[0]);
 
 	player_cards[1] = deck_ptr->deal();
 	player_hand->add_card(player_cards[1]);
 
 	player_ptr->expose(player_cards[1]);
 
-	cout << "Player dealt " << player_cards[1] << endl;
+	announce_player_card(&player_cards[1]);
 
 	dealer_cards[1] = deck_ptr->deal();
 	dealer_hand->add_card(dealer_cards[1]);
+
+	*dealer_upcard_ptr = dealer_cards[0];
 
 	return;
 }
@@ -161,6 +193,20 @@ static void natural_twenty_one_payout(int &bankroll)
 	cout << "Player dealt natural 21\n";
 
 	bankroll = (3 * bankroll) / 2;
+
+	return;
+}
+
+static void announce_player_card(const Card *card)
+{
+	cout << "Player dealt " << *card << endl;
+
+	return;
+}
+
+static void announce_dealer_card(const Card *card)
+{
+	cout << "Dealer dealt " << *card << endl;
 
 	return;
 }
