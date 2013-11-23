@@ -19,10 +19,9 @@ Deck_test00.1 : Deck_test00.1.cpp Deck.cpp Card.cpp
 blackjack : Card.cpp rand.cpp Hand.cpp Deck.cpp Player.cpp blackjack.cpp
 	$(CC) $(CFLAGS) Card.cpp rand.cpp Hand.cpp Deck.cpp Player.cpp blackjack.cpp -o blackjack
 
-test : blackjack Card_test00 Deck_test00 Player_test00
+test : blackjack Card_test00 Deck_test00
 	./Card_test00
 	./Deck_test00
-	./Player_test00
 	./blackjack 100 3 simple > blackjack.out
 	diff -q blackjack_test00.out.correct blackjack.out
 

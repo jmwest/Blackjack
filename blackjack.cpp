@@ -38,7 +38,7 @@ static void shuffle_deck(Deck *deck_ptr, Player *player_ptr);
 //			 player_hand
 //			 dealer_hand
 // EFFECTS:
-static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_hand, Hand *dealer_hand, Card *dealer_upcard_ptr);
+static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_hand, Hand *dealer_hand, Card dealer_upcard_ptr[]);
 
 //
 static bool check_twenty_one(Hand *hand);
@@ -51,6 +51,39 @@ static void announce_player_card(const Card *card);
 
 //
 static void announce_dealer_card(const Card *card);
+
+//
+static void announce_dealer_hole_card(const Card *card);
+
+//
+static void announce_player_total(const Hand *player_hand);
+
+//
+static void announce_dealer_total(const Hand *dealer_hand);
+
+//
+static void announce_player_busts();
+
+//
+static void announce_dealer_busts();
+
+//
+static void announce_player_wins();
+
+//
+static void announce_dealer_wins();
+
+//
+static void player_lost_hand(int &bankroll, const int &wager, Hand *player_hand, Hand *dealer_hand);
+
+//
+static void player_won_hand(int &bankroll, const int &wager, Hand *player_hand, Hand *dealer_hand);
+
+//
+static void hand_is_push(Hand *player_hand, Hand *dealer_hand);
+
+//
+static void play_dealers_hand(Hand *dealer_hand, const Card dealer_cards[], Player *player_ptr, Deck *deck);
 
 int main(int argc, char *argv[])
 {
@@ -66,7 +99,7 @@ int main(int argc, char *argv[])
 	Deck deck;
 	Hand player_hand;
 	Hand dealer_hand;
-	Card dealer_upcard;
+	Card dealer_cards[2];
 	int bankroll = atoi(argv[1]);
 	int thishand = 1;
 	int max_hands = atoi(argv[2]);
@@ -89,7 +122,7 @@ int main(int argc, char *argv[])
 
 		cout << "Player bets " << wager << endl;
 
-		deal_initial_cards(&deck, player_ptr, &player_hand, &dealer_hand, &dealer_upcard);
+		deal_initial_cards(&deck, player_ptr, &player_hand, &dealer_hand, dealer_cards);
 
 		if (check_twenty_one(&player_hand))
 		{
@@ -100,9 +133,9 @@ int main(int argc, char *argv[])
 			bool player_stands = false;
 			bool player_busts = false;
 
-			while (player_stands == false)
+			while (!player_stands && !player_busts)
 			{
-				if (player_ptr->draw(dealer_upcard, player_hand))
+				if (player_ptr->draw(dealer_cards[0], player_hand))
 				{
 					Card player_card;
 
@@ -123,8 +156,50 @@ int main(int argc, char *argv[])
 					player_busts = true;
 				}
 			}
+
+			announce_player_total(&player_hand);
+
+			if (player_busts)
+			{
+				player_lost_hand(bankroll, wager, &player_hand, &dealer_hand);
+				announce_player_busts();
+			}
+			else
+			{
+				play_dealers_hand(&dealer_hand, dealer_cards, player_ptr, &deck);
+
+				announce_dealer_total(&dealer_hand);
+
+				if (dealer_hand.hand_value() > 21)
+				{
+					player_won_hand(bankroll, wager, &player_hand, &dealer_hand);
+					announce_dealer_busts();
+				}
+				else
+				{
+					if (player_hand.hand_value() > dealer_hand.hand_value())
+					{
+						player_won_hand(bankroll, wager, &player_hand, &dealer_hand);
+						announce_player_wins();
+					}
+					else if (player_hand.hand_value() < dealer_hand.hand_value())
+					{
+						player_lost_hand(bankroll, wager, &player_hand, &dealer_hand);
+						announce_dealer_wins();
+					}
+					else
+					{
+						hand_is_push(&player_hand, &dealer_hand);
+					}
+				}
+			}
+
+			thishand++;
 		}
 	}
+
+	cout << "Player has " << bankroll << " after "
+		 << thishand-1 << " hands\n";
 
 	return 0;
 }
@@ -149,10 +224,9 @@ static void shuffle_deck(Deck *deck, Player *player_ptr)
 	return;
 }
 
-static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_hand, Hand *dealer_hand, Card *dealer_upcard_ptr)
+static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_hand, Hand *dealer_hand, Card dealer_cards_ptr[])
 {
 	Card player_cards[2];
-	Card dealer_cards[2];
 
 	player_cards[0] = deck_ptr->deal();
 	player_hand->add_card(player_cards[0]);
@@ -161,12 +235,12 @@ static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_
 
 	announce_player_card(&player_cards[0]);
 
-	dealer_cards[0] = deck_ptr->deal();
-	dealer_hand->add_card(dealer_cards[0]);
+	dealer_cards_ptr[0] = deck_ptr->deal();
+	dealer_hand->add_card(dealer_cards_ptr[0]);
 
-	player_ptr->expose(dealer_cards[0]);
+	player_ptr->expose(dealer_cards_ptr[0]);
 
-	announce_dealer_card(&dealer_cards[0]);
+	announce_dealer_card(&dealer_cards_ptr[0]);
 
 	player_cards[1] = deck_ptr->deal();
 	player_hand->add_card(player_cards[1]);
@@ -175,10 +249,8 @@ static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_
 
 	announce_player_card(&player_cards[1]);
 
-	dealer_cards[1] = deck_ptr->deal();
-	dealer_hand->add_card(dealer_cards[1]);
-
-	*dealer_upcard_ptr = dealer_cards[0];
+	dealer_cards_ptr[1] = deck_ptr->deal();
+	dealer_hand->add_card(dealer_cards_ptr[1]);
 
 	return;
 }
@@ -207,6 +279,108 @@ static void announce_player_card(const Card *card)
 static void announce_dealer_card(const Card *card)
 {
 	cout << "Dealer dealt " << *card << endl;
+
+	return;
+}
+
+static void announce_dealer_hole_card(const Card *card)
+{
+	cout << "Dealer's hole card is " << *card << endl;
+
+	return;
+}
+
+static void announce_player_total(const Hand *player_hand)
+{
+	cout << "Player's total is " << player_hand->hand_value() << endl;
+
+	return;
+}
+
+static void announce_dealer_total(const Hand *dealer_hand)
+{
+	cout << "Dealer's total is " << dealer_hand->hand_value() << endl;
+
+	return;
+}
+
+static void announce_player_busts()
+{
+	cout << "Player busts\n";
+
+	return;
+}
+
+static void announce_dealer_busts()
+{
+	cout << "Dealer busts\n";
+
+	return;
+}
+
+static void announce_player_wins()
+{
+	cout << "Player wins\n";
+
+	return;
+}
+
+
+static void announce_dealer_wins()
+{
+	cout << "Dealer wins\n";
+
+	return;
+}
+
+static void player_lost_hand(int &bankroll, const int &wager, Hand *player_hand, Hand *dealer_hand)
+{
+	bankroll = bankroll - wager;
+
+	player_hand->discard_all();
+	dealer_hand->discard_all();
+
+	return;
+}
+
+static void player_won_hand(int &bankroll, const int &wager, Hand *player_hand, Hand *dealer_hand)
+{
+	bankroll = bankroll + wager;
+
+	player_hand->discard_all();
+	dealer_hand->discard_all();
+
+	return;
+}
+
+static void hand_is_push(Hand *player_hand, Hand *dealer_hand)
+{
+	cout << "Push\n";
+
+	player_hand->discard_all();
+	dealer_hand->discard_all();
+	
+	return;
+}
+
+static void play_dealers_hand(Hand *dealer_hand, const Card dealer_cards[], Player *player_ptr, Deck *deck)
+{
+	Card dealt;
+
+	announce_dealer_hole_card(&dealer_cards[1]);
+
+	player_ptr->expose(dealer_cards[1]);
+
+	while (dealer_hand->hand_value() < 17)
+	{
+		dealt = deck->deal();
+
+		player_ptr->expose(dealt);
+
+		dealer_hand->add_card(dealt);
+
+		announce_dealer_card(&dealt);
+	}
 
 	return;
 }
