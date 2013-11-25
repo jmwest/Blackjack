@@ -34,6 +34,18 @@ Deck_test08 : Deck_test08.cpp Deck.cpp Card.cpp
 Deck_test09 : Deck_test09.cpp Deck.cpp Card.cpp
 	$(CC) $(CFLAGS) Deck_test09.cpp Deck.cpp Card.cpp -o Deck_test09
 
+Deck_test10 : Deck_test10.cpp Deck.cpp Card.cpp
+	$(CC) $(CFLAGS) Deck_test10.cpp Deck.cpp Card.cpp -o Deck_test10
+
+Deck_test11 : Deck_test11.cpp Deck.cpp Card.cpp
+	$(CC) $(CFLAGS) Deck_test11.cpp Deck.cpp Card.cpp -o Deck_test11
+
+Deck_test12 : Deck_test12.cpp Deck.cpp Card.cpp
+	$(CC) $(CFLAGS) Deck_test12.cpp Deck.cpp Card.cpp -o Deck_test12
+
+Deck_test13 : Deck_test13.cpp Deck.cpp Card.cpp
+	$(CC) $(CFLAGS) Deck_test13.cpp Deck.cpp Card.cpp -o Deck_test13
+
 Player_test00 : Player_tst00.cpp Card.cpp Hand.cpp Deck.cpp Player.cpp rand.cpp
 	$(CC) $(CFLAGS) Player_test00.cpp Card.cpp Hand.cpp Deck.cpp Player.cpp rand.cpp -o Player_test00
 
@@ -52,7 +64,7 @@ test : blackjack Card_test00 Deck_test00
 	./blackjack 100 3 simple > blackjack.out
 	diff -q blackjack_test00.out.correct blackjack.out
 
-testU : Deck_test01 Deck_test02 Deck_test03 Deck_test04 Deck_test05 Deck_test06 Deck_test07 Deck_test08 Deck_test09
+testU : Deck_test01 Deck_test02 Deck_test03 Deck_test04 Deck_test05 Deck_test06 Deck_test07 Deck_test08 Deck_test09 Deck_test10 Deck_test11 Deck_test12 Deck_test13
 	./Deck_test01
 	./Deck_test02
 	./Deck_test03
@@ -62,6 +74,10 @@ testU : Deck_test01 Deck_test02 Deck_test03 Deck_test04 Deck_test05 Deck_test06 
 	./Deck_test07
 	./Deck_test08
 	./Deck_test09
+	./Deck_test10
+	./Deck_test11
+	./Deck_test12
+	./Deck_test13
 
 testC : Card_test00
 	./Card_test00 > Card_test00.out

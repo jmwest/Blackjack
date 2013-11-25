@@ -1,5 +1,5 @@
 //
-//  Deck_test11.cpp
+//  Deck_test12.cpp
 //  proj4
 //
 //  Created by John West on 11/24/13.
@@ -27,16 +27,18 @@ int main()
 		}
 	}
 
-	d.shuffle(27);
+	d.shuffle(13);
 
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < 13; i++)
 	{
-		assert(d.deal() == c[i + 27]);
+		assert(d.deal() == c[i + 13]);
 		assert(d.deal() == c[i]);
 	}
 
-	assert(d.deal() == c[25]);
-	assert(d.deal() == c[26]);
+	for (int j = 26; j < 52; j++)
+	{
+		assert(d.deal() == c[j]);
+	}
 
 	return 0;
 }

@@ -1,5 +1,5 @@
 //
-//  Deck_test08.cpp
+//  Deck_test10.cpp
 //  proj4
 //
 //  Created by John West on 11/24/13.
@@ -9,7 +9,8 @@
 #include "Card.h"
 #include "Deck.h"
 #include <cassert>
-
+#include <iostream>
+using namespace std;
 // Tests that after a shuffle() then reset(), the deck will deal out in the proper order
 
 bool operator== (const Card &a, const Card &b);
@@ -21,9 +22,9 @@ int main()
 
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = 0; i < 13; i++)
+		for (int j = 0; j < 13; j++)
 		{
-			c[(i * 4) + j] = Card(static_cast<Card::Rank>(j), static_cast<Card::Suit>(i));
+			c[(i * 13) + j] = Card(static_cast<Card::Rank>(j), static_cast<Card::Suit>(i));
 		}
 	}
 
@@ -39,4 +40,9 @@ int main()
 	assert(d.deal() == c[51]);
 
 	return 0;
+}
+
+bool operator== (const Card &a, const Card &b)
+{
+	return (a.get_rank() == b.get_rank()) && (a.get_suit() == b.get_suit());
 }

@@ -274,40 +274,7 @@ int Competitor::bet(unsigned int bankroll, unsigned int minimum)
 	{
 		return minimum;
 	}
-	else if (count < 5)
-	{
-		if (minimum * 1.5 > bankroll)
-		{
-			return bankroll;
-		}
-		else
-		{
-			return minimum * 1.5;
-		}
-	}
-	else if (count < 8)
-	{
-		if (minimum * 2 > bankroll)
-		{
-			return bankroll;
-		}
-		else
-		{
-			return minimum * 2;
-		}
-	}
-	else if (count < 11)
-	{
-		if (minimum * 3 > bankroll)
-		{
-			return bankroll;
-		}
-		else
-		{
-			return minimum * 3;
-		}
-	}
-	else
+	else if (count < 6)
 	{
 		if (minimum * 4 > bankroll)
 		{
@@ -315,11 +282,44 @@ int Competitor::bet(unsigned int bankroll, unsigned int minimum)
 		}
 		else
 		{
+			return minimum * 4;
+		}
+	}
+	else if (count < 9)
+	{
+		if (minimum * 6 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 6;
+		}
+	}
+	else if (count < 11)
+	{
+		if (minimum * 10 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 10;
+		}
+	}
+	else
+	{
+		if (minimum * 20 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
 			if (ace_count == 4)
 			{
-				if (bankroll > 10 * minimum)
+				if (bankroll > 40 * minimum)
 				{
-					return minimum * 10;
+					return minimum * 40;
 				}
 				else
 				{
@@ -328,7 +328,7 @@ int Competitor::bet(unsigned int bankroll, unsigned int minimum)
 			}
 			else
 			{
-				return minimum * 4;
+				return minimum * 20;
 			}
 		}
 	}
