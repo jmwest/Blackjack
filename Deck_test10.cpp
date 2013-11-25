@@ -27,15 +27,16 @@ int main()
 		}
 	}
 
-	d.shuffle(0);
+	d.shuffle(25);
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 25; i++)
 	{
-		for (int j = 0; j < 13; j++)
-		{
-			assert(d.deal() == Card(static_cast<Card::Rank>(j), static_cast<Card::Suit>(i)));
-		}
+		assert(d.deal() == c[i + 25]);
+		assert(d.deal() == c[i]);
 	}
+
+	assert(d.deal() == c[50]);
+	assert(d.deal() == c[51]);
 
 	return 0;
 }

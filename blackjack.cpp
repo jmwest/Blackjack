@@ -46,7 +46,7 @@ static void deal_initial_cards(Deck *deck_ptr, Player *player_ptr, Hand *player_
 static bool check_twenty_one(Hand *hand);
 
 //
-static void natural_twenty_one_payout(int &bankroll);
+static void natural_twenty_one_payout(int &bankroll, const int &wager);
 
 //
 static void announce_player_card(const Card *card);
@@ -128,7 +128,10 @@ int main(int argc, char *argv[])
 
 		if (check_twenty_one(&player_hand))
 		{
-			natural_twenty_one_payout(bankroll);
+			natural_twenty_one_payout(bankroll, wager);
+
+			player_hand.discard_all();
+			dealer_hand.discard_all();
 		}
 		else
 		{
@@ -195,9 +198,9 @@ int main(int argc, char *argv[])
 					}
 				}
 			}
-
-			thishand++;
 		}
+
+		thishand++;
 	}
 
 	cout << "Player has " << bankroll << " after "
@@ -262,11 +265,11 @@ static bool check_twenty_one(Hand *hand)
 	return hand->hand_value() == 21;
 }
 
-static void natural_twenty_one_payout(int &bankroll)
+static void natural_twenty_one_payout(int &bankroll, const int &wager)
 {
 	cout << "Player dealt natural 21\n";
 
-	bankroll = (3 * bankroll) / 2;
+	bankroll = bankroll + ( (3 * wager) / 2 );
 
 	return;
 }
