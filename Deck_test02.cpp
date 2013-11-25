@@ -1,0 +1,29 @@
+//
+//  Deck_test02.cpp
+//  proj4
+//
+//  Created by John West on 11/24/13.
+//  Copyright (c) 2013 John West. All rights reserved.
+//
+
+#include "Card.h"
+#include "Deck.h"
+#include <cassert>
+
+// Tests that after the deck deals a card, the cards_remaining() value decreases by one. Also tests that it starts at 52.
+
+int main()
+{
+	Deck d;
+
+	assert(d.cards_remaining() == 52);
+
+	for (int i = 51; i >= 0; i--)
+	{
+		d.deal();
+
+		assert(d.cards_remaining() == i);
+	}
+
+	return 0;
+}

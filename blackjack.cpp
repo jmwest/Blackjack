@@ -6,12 +6,14 @@
 //  Copyright (c) 2013 John West. All rights reserved.
 //
 
+#include <cstdlib>
 #include <cstring>
 #include <cassert>
 #include <iostream>
 
 #include "rand.h"
 #include "Card.h"
+#include "Hand.h"
 #include "Deck.h"
 #include "Player.h"
 
