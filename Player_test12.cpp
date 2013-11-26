@@ -1,5 +1,5 @@
 //
-//  Player_test04.cpp
+//  Player_test05.cpp
 //  proj4
 //
 //  Created by John West on 11/25/13.
@@ -11,7 +11,7 @@
 #include "Player.h"
 #include <cassert>
 
-// Check when count == 2, player bets 2 * minimum
+// If bankroll < 2 * minimum, player bets bankroll
 
 int main()
 {
@@ -22,11 +22,12 @@ int main()
 	player->expose(four_hearts);
 	player->expose(six_diamonds);
 
-	assert(player->bet(100, 25) == 50);
-	assert(player->bet(100, 10) == 20);
-	assert(player->bet(100, 5) == 10);
-	assert(player->bet(100, 2) == 4);
-	assert(player->bet(100, 0) == 0);
-	
+	assert(player->bet(1000, 501) == 1000);
+	assert(player->bet(30, 25) == 30);
+	assert(player->bet(10, 10) == 10);
+	assert(player->bet(9, 5) == 9);
+	assert(player->bet(4, 2) == 4);
+	assert(player->bet(0, 0) == 0);
+
 	return 0;
 }

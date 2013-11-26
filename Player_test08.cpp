@@ -11,31 +11,31 @@
 #include "Player.h"
 #include <cassert>
 
-// Check when count > 3, player bets 2 * minimum
+// Check when count == 2, shuffled() makes player bet minimum
 
 int main()
 {
 	Player *player = player_factory("counting");
-	Card card_array[20];
 
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 5; j++)
-		{
-			card_array[(i * 5) + j] = Card(static_cast<Card::Rank>(j), static_cast<Card::Suit>(i));
-		}
-	}
+	Card four_hearts = Card(static_cast<Card::Rank>(2), static_cast<Card::Suit>(1));
+	Card six_diamonds = Card(static_cast<Card::Rank>(4), static_cast<Card::Suit>(3));
 
-	for (int k = 0; k < 20; k++)
-	{
-		player->expose(card_array[k]);
+	player->expose(four_hearts);
+	player->expose(six_diamonds);
 
-		assert(player->bet(100, 25) == 50);
-		assert(player->bet(100, 10) == 20);
-		assert(player->bet(100, 5) == 10);
-		assert(player->bet(100, 2) == 4);
-		assert(player->bet(100, 0) == 0);
-	}
+	assert(player->bet(100, 25) == 50);
+	assert(player->bet(100, 10) == 20);
+	assert(player->bet(100, 5) == 10);
+	assert(player->bet(100, 2) == 4);
+	assert(player->bet(100, 0) == 0);
+
+	player->shuffled();
+
+	assert(player->bet(100, 25) == 25);
+	assert(player->bet(100, 10) == 10);
+	assert(player->bet(100, 5) == 5);
+	assert(player->bet(100, 2) == 2);
+	assert(player->bet(100, 0) == 0);
 
 	return 0;
 }

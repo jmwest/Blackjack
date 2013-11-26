@@ -26,7 +26,11 @@ int main()
 		}
 	}
 
-	for (int k = 0; k < 20; k++)
+	player->expose(card_array[0]);
+	player->expose(card_array[1]);
+	player->expose(card_array[2]);
+
+	for (int k = 3; k < 20; k++)
 	{
 		player->expose(card_array[k]);
 

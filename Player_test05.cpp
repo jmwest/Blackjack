@@ -23,12 +23,12 @@ int main()
 	player->expose(four_hearts);
 	player->expose(six_diamonds);
 	player->expose(two_clubs);
-	
+
 	assert(player->bet(100, 25) == 50);
 	assert(player->bet(100, 10) == 20);
 	assert(player->bet(100, 5) == 10);
 	assert(player->bet(100, 2) == 4);
 	assert(player->bet(100, 0) == 0);
-	
+
 	return 0;
 }

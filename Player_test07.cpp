@@ -11,29 +11,29 @@
 #include "Player.h"
 #include <cassert>
 
-// Check when count > 3, player bets 2 * minimum
+// Check that adding 7s, 8s, and 9s doesn't affect count. player bets minimum
 
 int main()
 {
 	Player *player = player_factory("counting");
-	Card card_array[20];
+	Card card_array[12];
 
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = 0; j < 5; j++)
+		for (int j = 5; j < 8; j++)
 		{
-			card_array[(i * 5) + j] = Card(static_cast<Card::Rank>(j), static_cast<Card::Suit>(i));
+			card_array[(i * 3) + j - 5] = Card(static_cast<Card::Rank>(j), static_cast<Card::Suit>(i));
 		}
 	}
 
-	for (int k = 0; k < 20; k++)
+	for (int k = 0; k < 12; k++)
 	{
 		player->expose(card_array[k]);
 
-		assert(player->bet(100, 25) == 50);
-		assert(player->bet(100, 10) == 20);
-		assert(player->bet(100, 5) == 10);
-		assert(player->bet(100, 2) == 4);
+		assert(player->bet(100, 25) == 25);
+		assert(player->bet(100, 10) == 10);
+		assert(player->bet(100, 5) == 5);
+		assert(player->bet(100, 2) == 2);
 		assert(player->bet(100, 0) == 0);
 	}
 
