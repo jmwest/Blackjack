@@ -11,7 +11,7 @@
 #include "Player.h"
 #include <cassert>
 
-// Test player stands if he has hard 13 - 16 and dealer upcard is 2 - 6
+// Test player stands if he has soft 18 and dealer upcard is 2, 7, or 8
 
 int main()
 {
@@ -24,27 +24,44 @@ int main()
 		card_array[i] = Card(static_cast<Card::Rank>(i), static_cast<Card::Suit>(3));
 	}
 
-	for (int i = 0; i < 4; i++)
+	player_hand.add_card(card_array[12]);
+	player_hand.add_card(card_array[5]);
+
+	assert(player_hand.hand_is_soft() == true);
+	assert(player_hand.hand_value() == 18);
+
+	for (int j = 0; j < 13; j++)
 	{
-		player_hand.add_card(card_array[4]);
-		player_hand.add_card(card_array[5 + i]);
-
-		assert(player_hand.hand_value() == (13 + i));
-
-		for (int j = 0; j < 13; j++)
+		if ((j == 0) or (j == 5) or (j == 6))
 		{
-			if (j <= 4)
-			{
-				assert(player->draw(card_array[j], player_hand) == false);
-			}
-			else
-			{
-				assert(player->draw(card_array[j], player_hand) == true);
-			}
+			assert(player->draw(card_array[j], player_hand) == false);
 		}
-
-		player_hand.discard_all();
+		else
+		{
+			assert(player->draw(card_array[j], player_hand) == true);
+		}
 	}
+
+	player_hand.discard_all();
+
+	player_hand.add_card(card_array[12]);
+	player_hand.add_card(card_array[1]);
+	player_hand.add_card(card_array[2]);
 	
+	assert(player_hand.hand_is_soft() == true);
+	assert(player_hand.hand_value() == 18);
+	
+	for (int j = 0; j < 13; j++)
+	{
+		if ((j == 0) or (j == 5) or (j == 6))
+		{
+			assert(player->draw(card_array[j], player_hand) == false);
+		}
+		else
+		{
+			assert(player->draw(card_array[j], player_hand) == true);
+		}
+	}
+
 	return 0;
 }

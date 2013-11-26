@@ -103,6 +103,18 @@ Player_test15 : Player_test15.cpp Card.cpp Hand.cpp Player.cpp
 Player_test16 : Player_test16.cpp Card.cpp Hand.cpp Player.cpp
 	$(CC) $(CFLAGS) Player_test16.cpp Card.cpp Hand.cpp Player.cpp -o Player_test16
 
+Player_test17 : Player_test17.cpp Card.cpp Hand.cpp Player.cpp
+	$(CC) $(CFLAGS) Player_test17.cpp Card.cpp Hand.cpp Player.cpp -o Player_test17
+
+Player_test18 : Player_test18.cpp Card.cpp Hand.cpp Player.cpp
+	$(CC) $(CFLAGS) Player_test18.cpp Card.cpp Hand.cpp Player.cpp -o Player_test18
+
+Player_test19 : Player_test19.cpp Card.cpp Hand.cpp Player.cpp
+	$(CC) $(CFLAGS) Player_test19.cpp Card.cpp Hand.cpp Player.cpp -o Player_test19
+
+Player_test20 : Player_test20.cpp Card.cpp Hand.cpp Player.cpp
+	$(CC) $(CFLAGS) Player_test20.cpp Card.cpp Hand.cpp Player.cpp -o Player_test20
+
 Hand_test00 : Hand_test00.cpp Hand.cpp Card.cpp
 	$(CC) $(CFLAGS) Hand_test00.cpp Hand.cpp Card.cpp -o Hand_test00
 
@@ -118,7 +130,7 @@ test : blackjack Card_test00 Deck_test00
 	./blackjack 100 3 simple > blackjack.out
 	diff -q blackjack_test00.out.correct blackjack.out
 
-testU : Deck_test01 Deck_test02 Deck_test03 Deck_test04 Deck_test05 Deck_test06 Deck_test07 Deck_test08 Deck_test09 Deck_test10 Deck_test11 Deck_test12 Deck_test13 Deck_test14 Deck_test15 Player_test01 Player_test02 Player_test03 Player_test04 Player_test05 Player_test06 Player_test07 Player_test08 Player_test09 Player_test10 Player_test11 Player_test12 Player_test13 Player_test14 Player_test15 Player_test16
+testU : Deck_test01 Deck_test02 Deck_test03 Deck_test04 Deck_test05 Deck_test06 Deck_test07 Deck_test08 Deck_test09 Deck_test10 Deck_test11 Deck_test12 Deck_test13 Deck_test14 Deck_test15 Player_test01 Player_test02 Player_test03 Player_test04 Player_test05 Player_test06 Player_test07 Player_test08 Player_test09 Player_test10 Player_test11 Player_test12 Player_test13 Player_test14 Player_test15 Player_test16 Player_test17 Player_test18 Player_test19 Player_test20
 	./Deck_test01
 	./Deck_test02
 	./Deck_test03
@@ -150,6 +162,10 @@ testU : Deck_test01 Deck_test02 Deck_test03 Deck_test04 Deck_test05 Deck_test06 
 	./Player_test14
 	./Player_test15
 	./Player_test16
+	./Player_test17
+	./Player_test18
+	./Player_test19
+	./Player_test20
 
 testC : Card_test00
 	./Card_test00 > Card_test00.out
