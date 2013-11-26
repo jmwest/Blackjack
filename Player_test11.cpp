@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Tests that each individual card will add to the count in its designated way
-
 int main()
 {
 	Player *player = player_factory("counting");

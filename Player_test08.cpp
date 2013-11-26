@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Check when count == 2, shuffled() makes player bet minimum
-
 int main()
 {
 	Player *player = player_factory("counting");

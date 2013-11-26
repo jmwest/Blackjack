@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// If bankroll < 2 * minimum, player bets bankroll
-
 int main()
 {
 	Player *player = player_factory("counting");

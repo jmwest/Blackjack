@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Test player stands if he has soft 18 and dealer upcard is 2, 7, or 8
-
 int main()
 {
 	Player *player = player_factory("counting");

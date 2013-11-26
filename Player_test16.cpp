@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Test if player has hard 17+, he always stands
-
 int main()
 {
 	Player *player = player_factory("counting");

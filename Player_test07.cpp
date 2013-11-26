@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Check that adding 7s, 8s, and 9s doesn't affect count. player bets minimum
-
 int main()
 {
 	Player *player = player_factory("counting");

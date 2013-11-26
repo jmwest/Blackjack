@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Test player hits or stands with random multiple ace combinations
-
 int main()
 {
 	Player *player = player_factory("counting");

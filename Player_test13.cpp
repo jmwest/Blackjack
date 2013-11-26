@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Test player with a hard hand will draw if his hand <= 11
-
 int main()
 {
 	Player *player = player_factory("counting");

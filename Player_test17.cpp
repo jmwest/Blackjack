@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Test player hits if he has soft <= 17
-
 int main()
 {
 	Player *player = player_factory("counting");

@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Test player stands if he has soft 19+
-
 int main()
 {
 	Player *player = player_factory("counting");

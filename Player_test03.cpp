@@ -11,8 +11,6 @@
 #include "Player.h"
 #include <cassert>
 
-// Check when count < 0, player bets minimum
-
 int main()
 {
 	Player *player = player_factory("counting");
