@@ -1,5 +1,5 @@
 //
-//  Player_test05.cpp
+//  Player_test13.cpp
 //  proj4
 //
 //  Created by John West on 11/25/13.
@@ -48,6 +48,6 @@ int main()
 	{
 		assert(player->draw(dealer_upcard[q], player_hand) == true);
 	}
-	
+
 	return 0;
 }

@@ -1,5 +1,5 @@
 //
-//  Player_test16.cpp
+//  Player_test18.cpp
 //  proj4
 //
 //  Created by John West on 11/25/13.
@@ -11,7 +11,7 @@
 #include "Player.h"
 #include <cassert>
 
-// Test if player has hard 17+, he always stands
+// Test player stands if he has hard 13 - 16 and dealer upcard is 2 - 6
 
 int main()
 {
@@ -24,21 +24,27 @@ int main()
 		card_array[i] = Card(static_cast<Card::Rank>(i), static_cast<Card::Suit>(3));
 	}
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 4; i++)
 	{
-		player_hand.add_card(card_array[10]);
-		player_hand.add_card(card_array[3]);
-		player_hand.add_card(card_array[i]);
+		player_hand.add_card(card_array[4]);
+		player_hand.add_card(card_array[5 + i]);
 
-		assert(player_hand.hand_value() == (17 + i));
+		assert(player_hand.hand_value() == (13 + i));
 
 		for (int j = 0; j < 13; j++)
 		{
-			assert(player->draw(card_array[j], player_hand) == false);
+			if (j <= 4)
+			{
+				assert(player->draw(card_array[j], player_hand) == false);
+			}
+			else
+			{
+				assert(player->draw(card_array[j], player_hand) == true);
+			}
 		}
 
 		player_hand.discard_all();
 	}
-
+	
 	return 0;
 }
