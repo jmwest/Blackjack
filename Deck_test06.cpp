@@ -10,8 +10,6 @@
 #include "Deck.h"
 #include <cassert>
 
-// Tests that after a deal() then shuffle(), the deck has the proper number of cards remaining
-
 int main()
 {
 	Deck d;

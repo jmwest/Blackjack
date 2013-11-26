@@ -10,8 +10,6 @@
 #include "Deck.h"
 #include <cassert>
 
-// Tests that after a reset(), the deck again has 52 cards remaining
-
 int main()
 {
 	Deck d;
@@ -20,6 +18,8 @@ int main()
 	{
 		d.deal();
 	}
+
+	assert(d.cards_remaining() == 0);
 
 	d.reset();
 

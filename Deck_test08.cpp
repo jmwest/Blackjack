@@ -10,8 +10,8 @@
 #include "Deck.h"
 #include <cassert>
 
-// Tests that after a shuffle(52) the deck will deal out in the proper order
-
+// REQUIRES: a and b are initialized Cards
+// EFFECTS: Function overload that compares the member variables, rank and suit, of each Card, and returns true if the values of the variables are equal. Otherwise returns false.
 bool operator== (const Card &a, const Card &b);
 
 int main()

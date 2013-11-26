@@ -4,57 +4,58 @@ Player_test01
 	Tests that when the player pointer is returned from player_factory, the player will bet the minimum value because the count is zero.
 
 Player_test02
-		Tests that when the player has a Four of Hearts exposed, the player will bet the minimum value because the count is one.
+	Tests that when the player has a Four of Hearts exposed, the player will bet the minimum value because the count is one.
 
 Player_test03
-		Tests that when the player has different combinations of Tens, Jacks, Queens, Kings, and Aces exposed, the player will bet the minimum value because the count is less than zero.
+	Tests that when the player has different combinations of Tens, Jacks, Queens, Kings, and Aces exposed, the player will bet the minimum value because the count is less than zero.
 
 Player_test04
-
+	Tests that when the player has a Four of Hearts and Six of Diamonds exposed, the player will bet twice the minimum value because the count is two.
 
 Player_test05
-
+	Tests that when the player has a Four of Hearts, Six of Diamonds, and Two Clubs exposed, the player will bet twice the minimum value because the count is three.
 
 Player_test06
-
+	Tests that when the player has different combinations of Twos, Threes, Fours, Fives, and Sixes exposed, the player will bet twice the minimum value because the count is greater than three.
 
 Player_test07
-
+	Tests that when the player has different combinations of Sevens, Eights, and Nines exposed, the player will bet the minimum value because the count is zero since they don't affect the count. Exposing a two and a three then makes the player bet twice the minimum because the count is now two.
 
 Player_test08
-
+	Tests that when the player has a Four of Hearts and Six of Diamonds exposed, the player will bet twice the minimum value because the count is two. Then when player->shuffled() is called, the count is reset and the player bets the minimum again.
 
 Player_test09
-
+	Tests that when the player has a Four of Hearts, Six of Diamonds, and Two of Clubs exposed, the player will bet twice the minimum value because the count is two. Then when player->shuffled() is called, the count is reset and the player bets the minimum again. Also tests for count values greater than three.
 
 Player_test10
-
+	Tests that when the player has combinations of cards exposed so that count is less than two, the player bets the minimum. Then after player->shuffled() is called, the player still bets minimum.
 
 Player_test11
-
+	Tests that each individual Rank of Card exposed will change the count correctly and the player will bet the allotted amount for the count. For cards 2 - 6, the card is added twice and then the player bets twice the minimum. For cards 7 - 9, a three is exposed and the card, the player bets the minimum, then a four is exposed and the card again, and the player bets twice the minimum. For 10 - Ace, a three and a four are added and then the card, and the player bets minimum.
 
 Player_test12
-
+	Tests that if the player's bankroll < 2 * minimum, and count >= 2, the player will bet his whole bankroll. 
 
 Player_test13
-
+	Tests that if a player's hand is hard and has a value <= 11, the player will always hit.
 
 Player_test14
-
+	Tests that if a player's hand is hard and has a value of 12, the player will stand if the dealer's upcard is a 4, 5, or 6, otherwise he hits.
 
 Player_test15
-
+	Tests that if a player's hand is hard and has a value between 13 and 16, inclusive, the player will stand if the dealer's upcard is a 2, 3, 4, 5, or 6, otherwise he hits.
 
 Player_test16
-
+	Tests that if a player's hand is hard and has a value >= 17, the player will stand if the dealer's upcard is a 4, 5, or 6, otherwise he hits.
 
 Player_test17
-
+	Tests that if a player's hand is soft and has a value <= 17, the player will always hit.
 
 Player_test18
-
+	Tests that if a player's hand is hard and has a value of 18, the player will stand if the dealer's upcard is a 2, 7, or 8, otherwise he hits.
 
 Player_test19
-
+	Tests that if a player's hand is hard and has a value >= 19, the player will always stand.
 
 Player_test20
+	Tests that if a player's hand is soft and has between 1 and 4 aces, the player will always hit. Then if a King is added to the hand, the player hits depending on the rules for a hard hand.

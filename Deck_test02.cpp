@@ -10,8 +10,6 @@
 #include "Deck.h"
 #include <cassert>
 
-// Tests that after the deck deals a card, the cards_remaining() value decreases by one. Also tests that it starts at 52.
-
 int main()
 {
 	Deck d;

@@ -1,0 +1,44 @@
+Deck_test01
+	Tests that an initialized Deck initializes with the correct card order. Relies upon deal() working correctly. If deal doesn't work right, it would also catch that.
+
+Deck_test02
+	Tests that after the deck deals a card, the cards_remaining() value decreases by one. Also tests that card_remaining() starts at 52.
+
+Deck_test03
+	Tests that if all the cards are dealt, cards_remaining() == 0, then after a reset(), the deck again has 52 cards remaining.
+
+Deck_test04
+	Tests that after a reset(), the deck will deal out in the proper new deck order, which is all the spades, then hearts, then clubs, then diamonds.
+
+Deck_test05
+	Tests that after a shuffle(), then reset(), the deck will deal out in the proper new deck order.
+
+Deck_test06
+	Tests that after dealing all the cards then shuffling the deck, the deck has the proper number of cards remaining, which is 52.
+
+Deck_test07
+	Tests that after a shuffle(0) the deck will deal out the cards in the proper order for the given cut number.
+
+Deck_test08
+	Tests the same functionality as Deck_test07, but with a cut of 52.
+
+Deck_test09
+	Tests the same functionality as Deck_test07, but with a cut of 26.
+
+Deck_test10
+	Tests the same functionality as Deck_test07, but with a cut of 25.
+
+Deck_test11
+	Tests the same functionality as Deck_test07, but with a cut of 27.
+
+Deck_test12
+	Tests the same functionality as Deck_test07, but with a cut of 13.
+
+Deck_test13
+	Tests the same functionality as Deck_test07, but with a cut of 33.
+
+Deck_test14
+	Tests the same functionality as Deck_test07, but with a cut of 1.
+
+Deck_test15
+	Tests the same functionality as Deck_test07, but with a cut of 51.

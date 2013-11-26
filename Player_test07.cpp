@@ -17,6 +17,8 @@ int main()
 {
 	Player *player = player_factory("counting");
 	Card card_array[12];
+	Card two_clubs = Card(static_cast<Card::Rank>(0), static_cast<Card::Suit>(2));
+	Card two_hearts = Card(static_cast<Card::Rank>(0), static_cast<Card::Suit>(1));
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -36,6 +38,15 @@ int main()
 		assert(player->bet(100, 2) == 2);
 		assert(player->bet(100, 0) == 0);
 	}
+
+	player->expose(two_clubs);
+	player->expose(two_hearts);
+
+	assert(player->bet(100, 25) == 50);
+	assert(player->bet(100, 10) == 20);
+	assert(player->bet(100, 5) == 10);
+	assert(player->bet(100, 2) == 4);
+	assert(player->bet(100, 0) == 0);
 
 	return 0;
 }

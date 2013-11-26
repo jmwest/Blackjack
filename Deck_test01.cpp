@@ -10,8 +10,8 @@
 #include "Deck.h"
 #include <cassert>
 
-// Tests that an initialized Deck initializes with the correct card order. Relies upon deal() working correctly. If deal doesn't work right, it would also catch that.
-
+// REQUIRES: a and b are initialized Cards
+// EFFECTS: Function overload that compares the member variables, rank and suit, of each Card, and returns true if the values of the variables are equal. Otherwise returns false.
 bool operator== (const Card &a, const Card &b);
 
 int main()
