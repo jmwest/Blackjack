@@ -27,13 +27,6 @@ Deck::Deck()
 // spades from 2-A, then the hearts, then the clubs, then the
 // diamonds.  The first card dealt should be the 2 of Spades.
 
-void Deck::print()
-{
-	for (int i = 0; i < DECK_SIZE; i++)
-	{
-		cout << deck[i] << endl;
-	}
-}
 void Deck::reset()
 {
 	for (int i = 0; i < 4; i++)
