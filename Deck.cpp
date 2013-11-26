@@ -142,7 +142,7 @@ int Deck::cards_remaining() const
 {
 	int remaining = 0;
 
-	remaining = 52 - (int)(next - deck);
+	remaining = 52 - static_cast<int>(next - deck);
 
 	return remaining;
 }

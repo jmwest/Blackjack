@@ -10,7 +10,7 @@
 #include "Deck.h"
 #include <cassert>
 
-// Tests that after a shuffle() then reset(), the deck will deal out in the proper order
+// Tests that after a shuffle(52) the deck will deal out in the proper order
 
 bool operator== (const Card &a, const Card &b);
 

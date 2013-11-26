@@ -1,5 +1,5 @@
 //
-//  Deck_test01.cpp
+//  Deck_test09.cpp
 //  proj4
 //
 //  Created by John West on 11/24/13.
@@ -9,8 +9,8 @@
 #include "Card.h"
 #include "Deck.h"
 #include <cassert>
-#include <iostream>
-// Tests that after a shuffle() then reset(), the deck will deal out in the proper order
+
+// Tests that after a shuffle(26) the deck will deal out in the proper order
 
 bool operator== (const Card &a, const Card &b);
 
