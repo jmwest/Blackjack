@@ -240,11 +240,7 @@ public:
 //                      );
     // EFFECTS: returns true if the player wishes to be dealt another
     // card, false otherwise.
-
-	virtual bool draw(Card dealer, // Dealer's "up card"
-                      const Hand &player // Player's current hand
-                      );
-
+	
     virtual void expose(Card c);
     // EFFECTS: allows the player to "see" the newly-exposed card c.
     // For example, each card that is dealt "face up" is expose()d.
@@ -252,7 +248,7 @@ public:
     // expose()d.  Note: not all cards dealt are expose()d---if the
     // player goes over 21 or is dealt a natural 21, the dealer need
     // not expose his hole card.
-
+	
     virtual void shuffled();
     // EFFECTS: tells the player that the deck has been re-shuffled.
 	
@@ -274,80 +270,68 @@ Competitor::Competitor()
 
 int Competitor::bet(unsigned int bankroll, unsigned int minimum)
 {
-	if (bankroll < 50)
+	if (count < 2)
 	{
 		return minimum;
 	}
+	else if (count < 5)
+	{
+		if (minimum * 1.5 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 1.5;
+		}
+	}
+	else if (count < 8)
+	{
+		if (minimum * 2 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 2;
+		}
+	}
+	else if (count < 11)
+	{
+		if (minimum * 3 > bankroll)
+		{
+			return bankroll;
+		}
+		else
+		{
+			return minimum * 3;
+		}
+	}
 	else
 	{
-		if (count < 2)
+		if (minimum * 4 > bankroll)
 		{
-			return minimum;
+			return bankroll;
 		}
-		else if (count < 6)
+		else
 		{
-			if (minimum * 4 > bankroll)
+			if (ace_count == 4)
 			{
-				return bankroll;
+				if (bankroll > 10 * minimum)
+				{
+					return minimum * 10;
+				}
+				else
+				{
+					return bankroll;
+				}
 			}
 			else
 			{
 				return minimum * 4;
 			}
 		}
-		else if (count < 9)
-		{
-			if (minimum * 6 > bankroll)
-			{
-				return bankroll;
-			}
-			else
-			{
-				return minimum * 6;
-			}
-		}
-		else if (count < 11)
-		{
-			if (minimum * 10 > bankroll)
-			{
-				return bankroll;
-			}
-			else
-			{
-				return minimum * 10;
-			}
-		}
-		else
-		{
-			if (minimum * 20 > bankroll)
-			{
-				return bankroll;
-			}
-			else
-			{
-				if (ace_count == 4)
-				{
-					if (bankroll > 40 * minimum)
-					{
-						return minimum * 40;
-					}
-					else
-					{
-						return bankroll;
-					}
-				}
-				else
-				{
-					return minimum * 20;
-				}
-			}
-		}
 	}
-}
-
-bool Competitor::draw(Card dealer, const Hand &player)
-{
-	return true;
 }
 
 void Competitor::expose(Card c)

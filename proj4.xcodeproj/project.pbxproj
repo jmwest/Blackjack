@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2700AD581842C4AB001C76F7 /* Deck_test01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2700AD561842C4AB001C76F7 /* Deck_test01.cpp */; };
+		2700AD5E1842C524001C76F7 /* Deck_test02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2700AD5A1842C524001C76F7 /* Deck_test02.cpp */; };
+		2700AD5F1842C524001C76F7 /* Deck_test03.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2700AD5B1842C524001C76F7 /* Deck_test03.cpp */; };
+		2700AD601842C524001C76F7 /* Deck_test04.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2700AD5C1842C524001C76F7 /* Deck_test04.cpp */; };
+		2700AD611842C524001C76F7 /* Deck_test05.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2700AD5D1842C524001C76F7 /* Deck_test05.cpp */; };
+		270BECF9184470A300273080 /* Player_test17.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270BECF5184470A300273080 /* Player_test17.cpp */; };
+		270BECFA184470A300273080 /* Player_test18.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270BECF6184470A300273080 /* Player_test18.cpp */; };
+		270BECFB184470A300273080 /* Player_test19.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270BECF7184470A300273080 /* Player_test19.cpp */; };
+		270BECFC184470A300273080 /* Player_test20.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270BECF8184470A300273080 /* Player_test20.cpp */; };
+		270DCB4D1837164700C9ADE6 /* Hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 270DCB4C1837164700C9ADE6 /* Hand.cpp */; };
+		2730D9121842F3FC00395547 /* Deck_test07.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2730D9111842F3FC00395547 /* Deck_test07.cpp */; };
+		2730D9151842F40A00395547 /* Deck_test06.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2730D9131842F40A00395547 /* Deck_test06.cpp */; };
+		2730D9161842F40A00395547 /* Deck_test08.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2730D9141842F40A00395547 /* Deck_test08.cpp */; };
+		2730D9181842FED200395547 /* Deck_test09.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2730D9171842FED200395547 /* Deck_test09.cpp */; };
+		2730D91B1843000C00395547 /* Deck_test10.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2730D9191843000C00395547 /* Deck_test10.cpp */; };
+		2730D91C1843000C00395547 /* Deck_test11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2730D91A1843000C00395547 /* Deck_test11.cpp */; };
+		273CAD9F1832E62600E47714 /* Deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 273CAD9E1832E62600E47714 /* Deck.cpp */; };
+		27693F9A18314FF800DEAF21 /* Player_test00.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27693F9018314FF800DEAF21 /* Player_test00.cpp */; };
+		27693F9C18314FF800DEAF21 /* rand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27693F9218314FF800DEAF21 /* rand.cpp */; };
+		27693F9F183151CC00DEAF21 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27693F9E183151CC00DEAF21 /* Card.cpp */; };
+		27CB4FE0184451FC00B11F18 /* Player_test12.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CB4FDB184451FB00B11F18 /* Player_test12.cpp */; };
+		27CB4FE1184451FC00B11F18 /* Player_test13.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CB4FDC184451FB00B11F18 /* Player_test13.cpp */; };
+		27CB4FE2184451FC00B11F18 /* Player_test14.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CB4FDD184451FB00B11F18 /* Player_test14.cpp */; };
+		27CB4FE3184451FC00B11F18 /* Player_test15.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CB4FDE184451FC00B11F18 /* Player_test15.cpp */; };
+		27CB4FE4184451FC00B11F18 /* Player_test16.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CB4FDF184451FC00B11F18 /* Player_test16.cpp */; };
+		27CF919D18380ACB00067CBD /* blackjack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CF919B18380ACB00067CBD /* blackjack.cpp */; };
+		27CFDA811844160600DC9886 /* Deck_test12.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA7F1844160600DC9886 /* Deck_test12.cpp */; };
+		27CFDA821844160600DC9886 /* Deck_test13.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA801844160600DC9886 /* Deck_test13.cpp */; };
+		27CFDA851844198800DC9886 /* Deck_test14.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA831844198800DC9886 /* Deck_test14.cpp */; };
+		27CFDA861844198800DC9886 /* Deck_test15.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA841844198800DC9886 /* Deck_test15.cpp */; };
+		27CFDA8918442B0C00DC9886 /* Player_test01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA8718442B0C00DC9886 /* Player_test01.cpp */; };
+		27CFDA8F18442B5A00DC9886 /* Player_test02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA8B18442B5900DC9886 /* Player_test02.cpp */; };
+		27CFDA9018442B5A00DC9886 /* Player_test03.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA8C18442B5900DC9886 /* Player_test03.cpp */; };
+		27CFDA9118442B5A00DC9886 /* Player_test04.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA8D18442B5900DC9886 /* Player_test04.cpp */; };
+		27CFDA9218442B5A00DC9886 /* Player_test05.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA8E18442B5A00DC9886 /* Player_test05.cpp */; };
+		27CFDA951844387300DC9886 /* Player_test06.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA931844387300DC9886 /* Player_test06.cpp */; };
+		27CFDA961844387300DC9886 /* Player_test07.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA941844387300DC9886 /* Player_test07.cpp */; };
+		27CFDA9B18443B5700DC9886 /* Player_test08.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA9718443B5700DC9886 /* Player_test08.cpp */; };
+		27CFDA9C18443B5700DC9886 /* Player_test09.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA9818443B5700DC9886 /* Player_test09.cpp */; };
+		27CFDA9D18443B5700DC9886 /* Player_test10.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA9918443B5700DC9886 /* Player_test10.cpp */; };
+		27CFDA9E18443B5700DC9886 /* Player_test11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CFDA9A18443B5700DC9886 /* Player_test11.cpp */; };
+		27F61A021847A11E00C6C58D /* smash_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F61A001847A11E00C6C58D /* smash_test.cpp */; };
+		27FFBFD01837D7FB00FD2D41 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27FFBFCF1837D7FB00FD2D41 /* Player.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2700AD561842C4AB001C76F7 /* Deck_test01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test01.cpp; sourceTree = "<group>"; };
+		2700AD5A1842C524001C76F7 /* Deck_test02.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test02.cpp; sourceTree = "<group>"; };
+		2700AD5B1842C524001C76F7 /* Deck_test03.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test03.cpp; sourceTree = "<group>"; };
+		2700AD5C1842C524001C76F7 /* Deck_test04.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test04.cpp; sourceTree = "<group>"; };
+		2700AD5D1842C524001C76F7 /* Deck_test05.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test05.cpp; sourceTree = "<group>"; };
+		270BECF5184470A300273080 /* Player_test17.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test17.cpp; sourceTree = "<group>"; };
+		270BECF6184470A300273080 /* Player_test18.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test18.cpp; sourceTree = "<group>"; };
+		270BECF7184470A300273080 /* Player_test19.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test19.cpp; sourceTree = "<group>"; };
+		270BECF8184470A300273080 /* Player_test20.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test20.cpp; sourceTree = "<group>"; };
+		270C45F8183444A000024EB2 /* Card_test00.out */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Card_test00.out; sourceTree = "<group>"; };
+		270C45FB1834459400024EB2 /* Card_test00.out.correct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Card_test00.out.correct; sourceTree = "<group>"; };
+		270DCB4C1837164700C9ADE6 /* Hand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hand.cpp; sourceTree = "<group>"; };
+		270DCB4E18371B8800C9ADE6 /* Hand_test00.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hand_test00.cpp; sourceTree = "<group>"; };
+		270DCB5218373AC100C9ADE6 /* Hand_test00.out.correct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hand_test00.out.correct; sourceTree = "<group>"; };
+		270DCB5318373C3C00C9ADE6 /* Hand_test00.out */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hand_test00.out; sourceTree = "<group>"; };
+		27109C841843C62A00401D92 /* hundo.out */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hundo.out; sourceTree = "<group>"; };
+		27224D0C1836C1A7002598D5 /* Deck_test00.out */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Deck_test00.out; sourceTree = "<group>"; };
+		2730D9111842F3FC00395547 /* Deck_test07.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test07.cpp; sourceTree = "<group>"; };
+		2730D9131842F40A00395547 /* Deck_test06.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test06.cpp; sourceTree = "<group>"; };
+		2730D9141842F40A00395547 /* Deck_test08.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test08.cpp; sourceTree = "<group>"; };
+		2730D9171842FED200395547 /* Deck_test09.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test09.cpp; sourceTree = "<group>"; };
+		2730D9191843000C00395547 /* Deck_test10.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test10.cpp; sourceTree = "<group>"; };
+		2730D91A1843000C00395547 /* Deck_test11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test11.cpp; sourceTree = "<group>"; };
+		273CAD9E1832E62600E47714 /* Deck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck.cpp; sourceTree = "<group>"; };
+		2764DD121835D0F000BA8A08 /* Deck_test00.out.correct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Deck_test00.out.correct; sourceTree = "<group>"; };
+		27693F8218314F0300DEAF21 /* libproj4.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libproj4.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		27693F8918314FF800DEAF21 /* blackjack_test00.out.correct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blackjack_test00.out.correct; sourceTree = "<group>"; };
+		27693F8A18314FF800DEAF21 /* Card_test00.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card_test00.cpp; sourceTree = "<group>"; };
+		27693F8B18314FF800DEAF21 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		27693F8C18314FF800DEAF21 /* Deck_test00.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test00.cpp; sourceTree = "<group>"; };
+		27693F8D18314FF800DEAF21 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		27693F8E18314FF800DEAF21 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
+		27693F8F18314FF800DEAF21 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		27693F9018314FF800DEAF21 /* Player_test00.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test00.cpp; sourceTree = "<group>"; };
+		27693F9118314FF800DEAF21 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		27693F9218314FF800DEAF21 /* rand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rand.cpp; sourceTree = "<group>"; };
+		27693F9318314FF800DEAF21 /* rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
+		27693F9E183151CC00DEAF21 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		27B9EE7618332F4400FD0035 /* project4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = project4.pdf; sourceTree = "<group>"; };
+		27C9E53218375DCD0011092E /* OperatorOverload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatorOverload.h; sourceTree = "<group>"; };
+		27C9E53318375E270011092E /* Deck_test00.1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test00.1.cpp; sourceTree = "<group>"; };
+		27C9E53718375FD20011092E /* Deck_test00.1.out.correct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Deck_test00.1.out.correct; sourceTree = "<group>"; };
+		27CB4FDB184451FB00B11F18 /* Player_test12.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test12.cpp; sourceTree = "<group>"; };
+		27CB4FDC184451FB00B11F18 /* Player_test13.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test13.cpp; sourceTree = "<group>"; };
+		27CB4FDD184451FB00B11F18 /* Player_test14.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test14.cpp; sourceTree = "<group>"; };
+		27CB4FDE184451FC00B11F18 /* Player_test15.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test15.cpp; sourceTree = "<group>"; };
+		27CB4FDF184451FC00B11F18 /* Player_test16.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test16.cpp; sourceTree = "<group>"; };
+		27CF919B18380ACB00067CBD /* blackjack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blackjack.cpp; sourceTree = "<group>"; };
+		27CFDA7F1844160600DC9886 /* Deck_test12.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test12.cpp; sourceTree = "<group>"; };
+		27CFDA801844160600DC9886 /* Deck_test13.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test13.cpp; sourceTree = "<group>"; };
+		27CFDA831844198800DC9886 /* Deck_test14.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test14.cpp; sourceTree = "<group>"; };
+		27CFDA841844198800DC9886 /* Deck_test15.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck_test15.cpp; sourceTree = "<group>"; };
+		27CFDA8718442B0C00DC9886 /* Player_test01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test01.cpp; sourceTree = "<group>"; };
+		27CFDA8B18442B5900DC9886 /* Player_test02.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test02.cpp; sourceTree = "<group>"; };
+		27CFDA8C18442B5900DC9886 /* Player_test03.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test03.cpp; sourceTree = "<group>"; };
+		27CFDA8D18442B5900DC9886 /* Player_test04.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test04.cpp; sourceTree = "<group>"; };
+		27CFDA8E18442B5A00DC9886 /* Player_test05.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test05.cpp; sourceTree = "<group>"; };
+		27CFDA931844387300DC9886 /* Player_test06.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test06.cpp; sourceTree = "<group>"; };
+		27CFDA941844387300DC9886 /* Player_test07.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test07.cpp; sourceTree = "<group>"; };
+		27CFDA9718443B5700DC9886 /* Player_test08.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test08.cpp; sourceTree = "<group>"; };
+		27CFDA9818443B5700DC9886 /* Player_test09.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test09.cpp; sourceTree = "<group>"; };
+		27CFDA9918443B5700DC9886 /* Player_test10.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test10.cpp; sourceTree = "<group>"; };
+		27CFDA9A18443B5700DC9886 /* Player_test11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player_test11.cpp; sourceTree = "<group>"; };
+		27EA29821845057D00EBA5A3 /* Deck_test.overview */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Deck_test.overview; sourceTree = "<group>"; };
+		27EA29831845058A00EBA5A3 /* Player_test.overview */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Player_test.overview; sourceTree = "<group>"; };
+		27F61A001847A11E00C6C58D /* smash_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = smash_test.cpp; sourceTree = "<group>"; };
+		27F71EF418413E51000D6FA3 /* blackjack.out */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blackjack.out; sourceTree = "<group>"; };
+		27FFBFCE1837D0CF00FD2D41 /* Deck_test00.1.out */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Deck_test00.1.out; sourceTree = "<group>"; };
+		27FFBFCF1837D7FB00FD2D41 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27693F7F18314F0300DEAF21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27693F7918314F0300DEAF21 = {
+			isa = PBXGroup;
+			children = (
+				27693F8318314F0300DEAF21 /* Products */,
+				27693F8B18314FF800DEAF21 /* Card.h */,
+				27693F9E183151CC00DEAF21 /* Card.cpp */,
+				27693F8D18314FF800DEAF21 /* Deck.h */,
+				273CAD9E1832E62600E47714 /* Deck.cpp */,
+				27693F8E18314FF800DEAF21 /* Hand.h */,
+				270DCB4C1837164700C9ADE6 /* Hand.cpp */,
+				27693F9118314FF800DEAF21 /* Player.h */,
+				27FFBFCF1837D7FB00FD2D41 /* Player.cpp */,
+				27CF919B18380ACB00067CBD /* blackjack.cpp */,
+				27693F9318314FF800DEAF21 /* rand.h */,
+				27693F9218314FF800DEAF21 /* rand.cpp */,
+				27EA29831845058A00EBA5A3 /* Player_test.overview */,
+				27CFDA8718442B0C00DC9886 /* Player_test01.cpp */,
+				27CFDA8B18442B5900DC9886 /* Player_test02.cpp */,
+				27CFDA8C18442B5900DC9886 /* Player_test03.cpp */,
+				27CFDA8D18442B5900DC9886 /* Player_test04.cpp */,
+				27CFDA8E18442B5A00DC9886 /* Player_test05.cpp */,
+				27CFDA931844387300DC9886 /* Player_test06.cpp */,
+				27CFDA941844387300DC9886 /* Player_test07.cpp */,
+				27CFDA9718443B5700DC9886 /* Player_test08.cpp */,
+				27CFDA9818443B5700DC9886 /* Player_test09.cpp */,
+				27CFDA9918443B5700DC9886 /* Player_test10.cpp */,
+				27CFDA9A18443B5700DC9886 /* Player_test11.cpp */,
+				27CB4FDB184451FB00B11F18 /* Player_test12.cpp */,
+				27CB4FDC184451FB00B11F18 /* Player_test13.cpp */,
+				27CB4FDD184451FB00B11F18 /* Player_test14.cpp */,
+				27CB4FDE184451FC00B11F18 /* Player_test15.cpp */,
+				27CB4FDF184451FC00B11F18 /* Player_test16.cpp */,
+				270BECF5184470A300273080 /* Player_test17.cpp */,
+				270BECF6184470A300273080 /* Player_test18.cpp */,
+				270BECF7184470A300273080 /* Player_test19.cpp */,
+				270BECF8184470A300273080 /* Player_test20.cpp */,
+				27F61A001847A11E00C6C58D /* smash_test.cpp */,
+				27109C841843C62A00401D92 /* hundo.out */,
+				27EA29821845057D00EBA5A3 /* Deck_test.overview */,
+				2700AD561842C4AB001C76F7 /* Deck_test01.cpp */,
+				2700AD5A1842C524001C76F7 /* Deck_test02.cpp */,
+				2700AD5B1842C524001C76F7 /* Deck_test03.cpp */,
+				2700AD5C1842C524001C76F7 /* Deck_test04.cpp */,
+				2700AD5D1842C524001C76F7 /* Deck_test05.cpp */,
+				2730D9131842F40A00395547 /* Deck_test06.cpp */,
+				2730D9111842F3FC00395547 /* Deck_test07.cpp */,
+				2730D9141842F40A00395547 /* Deck_test08.cpp */,
+				2730D9171842FED200395547 /* Deck_test09.cpp */,
+				2730D9191843000C00395547 /* Deck_test10.cpp */,
+				2730D91A1843000C00395547 /* Deck_test11.cpp */,
+				27CFDA7F1844160600DC9886 /* Deck_test12.cpp */,
+				27CFDA801844160600DC9886 /* Deck_test13.cpp */,
+				27CFDA831844198800DC9886 /* Deck_test14.cpp */,
+				27CFDA841844198800DC9886 /* Deck_test15.cpp */,
+				27693F8F18314FF800DEAF21 /* Makefile */,
+				27693F8A18314FF800DEAF21 /* Card_test00.cpp */,
+				27693F8C18314FF800DEAF21 /* Deck_test00.cpp */,
+				27C9E53318375E270011092E /* Deck_test00.1.cpp */,
+				27693F9018314FF800DEAF21 /* Player_test00.cpp */,
+				270DCB4E18371B8800C9ADE6 /* Hand_test00.cpp */,
+				27F71EF418413E51000D6FA3 /* blackjack.out */,
+				27693F8918314FF800DEAF21 /* blackjack_test00.out.correct */,
+				270C45F8183444A000024EB2 /* Card_test00.out */,
+				270C45FB1834459400024EB2 /* Card_test00.out.correct */,
+				27224D0C1836C1A7002598D5 /* Deck_test00.out */,
+				2764DD121835D0F000BA8A08 /* Deck_test00.out.correct */,
+				27FFBFCE1837D0CF00FD2D41 /* Deck_test00.1.out */,
+				27C9E53718375FD20011092E /* Deck_test00.1.out.correct */,
+				270DCB5318373C3C00C9ADE6 /* Hand_test00.out */,
+				270DCB5218373AC100C9ADE6 /* Hand_test00.out.correct */,
+				27C9E53218375DCD0011092E /* OperatorOverload.h */,
+				27B9EE7618332F4400FD0035 /* project4.pdf */,
+			);
+			sourceTree = "<group>";
+		};
+		27693F8318314F0300DEAF21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27693F8218314F0300DEAF21 /* libproj4.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		27693F8018314F0300DEAF21 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		27693F8118314F0300DEAF21 /* proj4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27693F8618314F0300DEAF21 /* Build configuration list for PBXNativeTarget "proj4" */;
+			buildPhases = (
+				27693F7E18314F0300DEAF21 /* Sources */,
+				27693F7F18314F0300DEAF21 /* Frameworks */,
+				27693F8018314F0300DEAF21 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = proj4;
+			productName = proj4;
+			productReference = 27693F8218314F0300DEAF21 /* libproj4.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27693F7A18314F0300DEAF21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "John West";
+			};
+			buildConfigurationList = 27693F7D18314F0300DEAF21 /* Build configuration list for PBXProject "proj4" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 27693F7918314F0300DEAF21;
+			productRefGroup = 27693F8318314F0300DEAF21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27693F8118314F0300DEAF21 /* proj4 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27693F7E18314F0300DEAF21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27693F9A18314FF800DEAF21 /* Player_test00.cpp in Sources */,
+				27693F9C18314FF800DEAF21 /* rand.cpp in Sources */,
+				27693F9F183151CC00DEAF21 /* Card.cpp in Sources */,
+				273CAD9F1832E62600E47714 /* Deck.cpp in Sources */,
+				270DCB4D1837164700C9ADE6 /* Hand.cpp in Sources */,
+				27FFBFD01837D7FB00FD2D41 /* Player.cpp in Sources */,
+				27CF919D18380ACB00067CBD /* blackjack.cpp in Sources */,
+				2700AD581842C4AB001C76F7 /* Deck_test01.cpp in Sources */,
+				2700AD5E1842C524001C76F7 /* Deck_test02.cpp in Sources */,
+				2700AD5F1842C524001C76F7 /* Deck_test03.cpp in Sources */,
+				2700AD601842C524001C76F7 /* Deck_test04.cpp in Sources */,
+				2700AD611842C524001C76F7 /* Deck_test05.cpp in Sources */,
+				2730D9121842F3FC00395547 /* Deck_test07.cpp in Sources */,
+				2730D9151842F40A00395547 /* Deck_test06.cpp in Sources */,
+				2730D9161842F40A00395547 /* Deck_test08.cpp in Sources */,
+				2730D9181842FED200395547 /* Deck_test09.cpp in Sources */,
+				2730D91B1843000C00395547 /* Deck_test10.cpp in Sources */,
+				2730D91C1843000C00395547 /* Deck_test11.cpp in Sources */,
+				27CFDA811844160600DC9886 /* Deck_test12.cpp in Sources */,
+				27CFDA821844160600DC9886 /* Deck_test13.cpp in Sources */,
+				27CFDA851844198800DC9886 /* Deck_test14.cpp in Sources */,
+				27CFDA861844198800DC9886 /* Deck_test15.cpp in Sources */,
+				27CFDA8918442B0C00DC9886 /* Player_test01.cpp in Sources */,
+				27CFDA8F18442B5A00DC9886 /* Player_test02.cpp in Sources */,
+				27CFDA9018442B5A00DC9886 /* Player_test03.cpp in Sources */,
+				27CFDA9118442B5A00DC9886 /* Player_test04.cpp in Sources */,
+				27CFDA9218442B5A00DC9886 /* Player_test05.cpp in Sources */,
+				27CFDA951844387300DC9886 /* Player_test06.cpp in Sources */,
+				27CFDA961844387300DC9886 /* Player_test07.cpp in Sources */,
+				27CFDA9B18443B5700DC9886 /* Player_test08.cpp in Sources */,
+				27CFDA9C18443B5700DC9886 /* Player_test09.cpp in Sources */,
+				27CFDA9D18443B5700DC9886 /* Player_test10.cpp in Sources */,
+				27CFDA9E18443B5700DC9886 /* Player_test11.cpp in Sources */,
+				27CB4FE0184451FC00B11F18 /* Player_test12.cpp in Sources */,
+				27CB4FE1184451FC00B11F18 /* Player_test13.cpp in Sources */,
+				27CB4FE2184451FC00B11F18 /* Player_test14.cpp in Sources */,
+				27CB4FE3184451FC00B11F18 /* Player_test15.cpp in Sources */,
+				27CB4FE4184451FC00B11F18 /* Player_test16.cpp in Sources */,
+				270BECF9184470A300273080 /* Player_test17.cpp in Sources */,
+				270BECFA184470A300273080 /* Player_test18.cpp in Sources */,
+				270BECFB184470A300273080 /* Player_test19.cpp in Sources */,
+				270BECFC184470A300273080 /* Player_test20.cpp in Sources */,
+				27F61A021847A11E00C6C58D /* smash_test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		27693F8418314F0300DEAF21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		27693F8518314F0300DEAF21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		27693F8718314F0300DEAF21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27693F8818314F0300DEAF21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27693F7D18314F0300DEAF21 /* Build configuration list for PBXProject "proj4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27693F8418314F0300DEAF21 /* Debug */,
+				27693F8518314F0300DEAF21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27693F8618314F0300DEAF21 /* Build configuration list for PBXNativeTarget "proj4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27693F8718314F0300DEAF21 /* Debug */,
+				27693F8818314F0300DEAF21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27693F7A18314F0300DEAF21 /* Project object */;
+}

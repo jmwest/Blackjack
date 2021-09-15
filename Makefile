@@ -124,11 +124,17 @@ Deck_test00.1 : Deck_test00.1.cpp Deck.cpp Card.cpp
 blackjack : Card.cpp rand.cpp Hand.cpp Deck.cpp Player.cpp blackjack.cpp
 	$(CC) $(CFLAGS) Card.cpp rand.cpp Hand.cpp Deck.cpp Player.cpp blackjack.cpp -o blackjack
 
+smash_test : smash_test.cpp
+	$(CC) $(CFLAGS) smash_test.cpp Card.cpp Hand.cpp Player.cpp Deck.cpp -o smash_test
+
 test : blackjack Card_test00 Deck_test00
 	./Card_test00
 	./Deck_test00
 	./blackjack 100 3 simple > blackjack.out
 	diff -q blackjack_test00.out.correct blackjack.out
+
+testSmash : smash_test
+	./smash_test > smash_test.out
 
 testU : Deck_test01 Deck_test02 Deck_test03 Deck_test04 Deck_test05 Deck_test06 Deck_test07 Deck_test08 Deck_test09 Deck_test10 Deck_test11 Deck_test12 Deck_test13 Deck_test14 Deck_test15 Player_test01 Player_test02 Player_test03 Player_test04 Player_test05 Player_test06 Player_test07 Player_test08 Player_test09 Player_test10 Player_test11 Player_test12 Player_test13 Player_test14 Player_test15 Player_test16 Player_test17 Player_test18 Player_test19 Player_test20
 	./Deck_test01
